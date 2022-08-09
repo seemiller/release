@@ -23,10 +23,17 @@ jobs:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Get the Tag and set the Version
+        id: get_version
+        shell: bash
+        run: echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\//}
+      - name: version check
+        shell: bash
+        run: echo $VERSION
       - name: Run build and publish tasks
         run: |
           set -e -x
-          export DOCKER_IMAGE_TAG_OVERRIDE=`cat version.txt` 
+          export DOCKER_IMAGE_TAG_OVERRIDE=$VERSION 
           echo $DOCKER_IMAGE_TAG_OVERRIDE
           echo "Building..."
           make DOCKER_IMAGE_TAG_OVERRIDE=$DOCKER_IMAGE_TAG_OVERRIDE build
