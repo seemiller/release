@@ -27,15 +27,12 @@ jobs:
         id: get_tag
         shell: bash
         run: echo ::set-output name=tag::${GITHUB_REF/refs\/tags\//}
-      - name: Echo Tag
+      - name: Run build and publish tasks
         env:
           TAG: ${{ steps.get_tag.outputs.tag }}
         run: |
-          echo "TAG: ${TAG}"
-      - name: Run build and publish tasks
-        run: |
           set -e -x
-          export DOCKER_IMAGE_TAG_OVERRIDE=`cat version.txt`
+          export DOCKER_IMAGE_TAG_OVERRIDE=${TAG}
           echo $DOCKER_IMAGE_TAG_OVERRIDE
           echo "Building..."
           make DOCKER_IMAGE_TAG_OVERRIDE=$DOCKER_IMAGE_TAG_OVERRIDE build
