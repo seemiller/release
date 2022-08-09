@@ -23,7 +23,9 @@ jobs:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
-      - name: Run release script
+      - name: Run build and publish tasks
         run: |
           set -e -x
           make build publish
+      - name: Release
+        uses: softprops/action-gh-release@v1
