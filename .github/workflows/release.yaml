@@ -26,6 +26,6 @@ jobs:
       - name: Run build and publish tasks
         run: |
           set -e -x
-          make build publish
+          DOCKER_IMAGE_TAG_OVERRIDE=`cat version.txt` make build publish
       - name: Release
         uses: softprops/action-gh-release@v1
