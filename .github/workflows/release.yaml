@@ -26,14 +26,16 @@ jobs:
       - name: Get the Tag and set the Version
         id: get_version
         shell: bash
-        run: echo ::set-output name=VERSION::${{ github.ref }}
-      - name: version check
-        shell: bash
-        run: echo $VERSION
+        run: echo ::set-output name=version::${{ github.ref }}
+      - name: Echo Version
+        env:
+          VERSION: ${{ steps.get_version.outputs.version }}
+        run: |
+          echo "VERSION: ${VERSION}"
       - name: Run build and publish tasks
         run: |
           set -e -x
-          export DOCKER_IMAGE_TAG_OVERRIDE=$VERSION 
+          export DOCKER_IMAGE_TAG_OVERRIDE=`cat version.txt`
           echo $DOCKER_IMAGE_TAG_OVERRIDE
           echo "Building..."
           make DOCKER_IMAGE_TAG_OVERRIDE=$DOCKER_IMAGE_TAG_OVERRIDE build
