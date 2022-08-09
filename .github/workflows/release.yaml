@@ -26,7 +26,7 @@ jobs:
       - name: Get the Tag and set the Version
         id: get_version
         shell: bash
-        run: echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\//}
+        run: echo ::set-output name=VERSION::${{ github.ref }}
       - name: version check
         shell: bash
         run: echo $VERSION
