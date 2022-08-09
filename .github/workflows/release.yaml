@@ -3,7 +3,7 @@ name: release
 on:
   push:
     tags:
-      - 'v*'
+      - 'v*.*.*'
 
 jobs:
   draft-release:
@@ -24,14 +24,14 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Get the Tag and set the Version
-        id: get_version
+        id: get_tag
         shell: bash
-        run: echo ::set-output name=version::${{ github.ref }}
-      - name: Echo Version
+        run: echo ::set-output name=tag::${{GITHUB_REF#refs/*/}}
+      - name: Echo Tag
         env:
-          VERSION: ${{ steps.get_version.outputs.version }}
+          TAG: ${{ steps.get_tag.outputs.tag }}
         run: |
-          echo "VERSION: ${VERSION}"
+          echo "TAG: ${TAG}"
       - name: Run build and publish tasks
         run: |
           set -e -x
