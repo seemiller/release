@@ -34,9 +34,9 @@ jobs:
           set -e -x
           export DOCKER_IMAGE_TAG_OVERRIDE=${TAG}
           echo $DOCKER_IMAGE_TAG_OVERRIDE
-          echo "Building..."
+          echo "Building main and package-tooling..."
           make DOCKER_IMAGE_TAG_OVERRIDE=$DOCKER_IMAGE_TAG_OVERRIDE build
-          echo "publishing..."
+          echo "publishing main and package-tooling..."
           make DOCKER_IMAGE_TAG_OVERRIDE=$DOCKER_IMAGE_TAG_OVERRIDE publish
       - name: Release
         uses: softprops/action-gh-release@v1
