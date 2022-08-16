@@ -17,12 +17,6 @@ help: ## Help
 oci-login: ## Login to the OCI Registry
 	@echo $(OCI_REGISTRY_PASSWORD) | docker login $(OCI_REGISTRY_URL) --username $(OCI_REGISTRY_USERNAME) --password-stdin
 
-.PHONY: foo
-foo: ## Build the Docker container image
-	export VERSION=`cat version.txt`
-	echo $$VERSION
-	echo docker build --tag $(OCI_REGISTRY_URL)$(OCI_REGISTRY_PROJECT)/$(APP_NAME):$(VERSION) $(DOCKERFILE_PATH)
-
 .PHONY: build
 build: ## Build the Docker container image
 	docker build --tag $(OCI_REGISTRY_URL)$(OCI_REGISTRY_PROJECT)/$(APP_NAME):$(DOCKER_IMAGE_TAG) $(DOCKERFILE_PATH)
