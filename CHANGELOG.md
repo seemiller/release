@@ -6,8 +6,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
-- Added Super cool new stuff
-- Fixed Super cool new Stuff
+
+## [v0.0.22] - 2022-08-18
+
+-   Added Super cool new stuff
+-   Fixed Super cool new Stuff
 
 ## [v0.0.21] - 2022-08-18
 
@@ -15,7 +18,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [v0.0.19] - 2022-08-18
 
-[Unreleased]: https://github.com/seemiller/release/compare/v0.0.21...HEAD
+[Unreleased]: https://github.com/seemiller/release/compare/v0.0.22...HEAD
+
+[v0.0.22]: https://github.com/seemiller/release/compare/v0.0.21...v0.0.22
 
 [v0.0.21]: https://github.com/seemiller/release/compare/v0.0.20...v0.0.21
 
