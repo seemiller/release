@@ -7,11 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [v0.0.21] - 2022-08-18
+
 ## [v0.0.20] - 2022-08-18
 
 ## [v0.0.19] - 2022-08-18
 
-[Unreleased]: https://github.com/seemiller/release/compare/v0.0.20...HEAD
+[Unreleased]: https://github.com/seemiller/release/compare/v0.0.21...HEAD
+
+[v0.0.21]: https://github.com/seemiller/release/compare/v0.0.20...v0.0.21
 
 [v0.0.20]: https://github.com/seemiller/release/compare/v0.0.19...v0.0.20
 
