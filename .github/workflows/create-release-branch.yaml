@@ -25,13 +25,17 @@ jobs:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Update changelog
+        uses: thomaseizinger/keep-a-changelog-new-release@1.1.0
+        with:
+          version: v${{ github.event.inputs.version }}
       - name: Update the version
         run: printf 'v${{ github.event.inputs.version }}\n' > version
-      - name: Commit version
+      - name: Commit version and changelog
         id: make-commit
         run: |
-          git add version
-          git commit --message "Update version to v${{ github.event.inputs.version }}"
+          git add version CHANGELOG.md
+          git commit --message "Update version to v${{ github.event.inputs.version }}; Update CHANGELOG"
           echo "::set-output name=commit::$(git rev-parse HEAD)"
       - name: Run build and publish tasks
         run: |
