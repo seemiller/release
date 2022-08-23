@@ -15,8 +15,8 @@ import (
 	"gopkg.in/yaml.v2"
 
 	"github.com/vmware-tanzu/carvel-imgpkg/pkg/imgpkg/lockconfig"
-	"github.com/vmware-tanzu/build-tooling-for-integrations/package-tools/constants"
-	"github.com/vmware-tanzu/build-tooling-for-integrations/package-tools/utils"
+	"github.com/seemiller/release/package-tools/constants"
+	"github.com/seemiller/release/package-tools/utils"
 )
 
 // repoBundlePushCmd is for pushing package repo bundle
