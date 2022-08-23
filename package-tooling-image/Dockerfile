@@ -26,7 +26,8 @@ RUN apt-get update && \
 RUN curl -sSL https://get.docker.com/ | sh
 
 COPY version /version
-RUN export VERSION=$(cat /version) && go install github.com/yharish991/build-tooling/package-tools@${VERSION} && rm -rf /version
+RUN export VERSION=$(cat /version) && go install github.com/seemiller/release/package-tools@${VERSION} && rm -rf /version
+#RUN export VERSION=$(cat /version) && go install github.com/yharish991/build-tooling/package-tools@${VERSION} && rm -rf /version
 #RUN export VERSION=$(cat /version) && go install github.com/vmware-tanzu/build-tooling-for-integrations/package-tools@${VERSION}  && rm -rf /version
 
 COPY package-tooling-image/build-packages.sh /build-packages.sh
