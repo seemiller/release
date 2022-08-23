@@ -47,8 +47,6 @@ jobs:
           name: v${{ github.event.inputs.version }}
           draft: false
           prerelease: false
-      - name: Publish Go Module
-        run: GOPROXY=proxy.golang.org go list -m github.com/seemiller/release@v${{ github.event.inputs.version }}
       - name: Push new branch
         run: git push origin release/v${{ github.event.inputs.version }}
       - name: Create pull request into main
@@ -61,6 +59,8 @@ jobs:
           reviewers: ${{ github.event.issue.user.login }}
           body: |
             This PR was created in response to a workflow running.
+      - name: Publish Go Module
+        run: GOPROXY=proxy.golang.org go list -m github.com/seemiller/release/package-tools@v${{ github.event.inputs.version }}
       - name: Run build, tag and publish tasks
         run: |
           set -e -x
