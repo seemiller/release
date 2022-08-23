@@ -7,7 +7,7 @@ on:
         required: true
 jobs:
   createrelease:
-    if: github.repository == 'vmware-tanzu/build-tooling-for-integrations'
+    if: github.repository == 'seemiller/release'
     runs-on: ubuntu-latest
 
     steps:
