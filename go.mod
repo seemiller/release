@@ -1,4 +1,4 @@
-module github.com/seemiller/release/package-tools
+module github.com/seemiller/release
 
 go 1.17
 
