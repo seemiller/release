@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [v0.0.30] - 2022-08-24
+
 ## [v0.0.22] - 2022-08-18
 
 -   Added Super cool new stuff
@@ -18,7 +20,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [v0.0.19] - 2022-08-18
 
-[Unreleased]: https://github.com/seemiller/release/compare/v0.0.22...HEAD
+[Unreleased]: https://github.com/seemiller/release/compare/v0.0.30...HEAD
+
+[v0.0.30]: https://github.com/seemiller/release/compare/v0.0.22...v0.0.30
 
 [v0.0.22]: https://github.com/seemiller/release/compare/v0.0.21...v0.0.22
 
